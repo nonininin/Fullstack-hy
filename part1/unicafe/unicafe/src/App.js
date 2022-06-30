@@ -5,7 +5,7 @@ const App = () => {
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
 
-  const Display = (props) => {
+  const Statistics = (props) => {
     return (
       <div>{props.text}{props.counter}</div>
     )
@@ -32,12 +32,12 @@ const App = () => {
       <button onClick={() => handleNeutralClick()}>neutral</button>
       <button onClick={() => handleBadClick()}>bad</button>
       <h1>statistics</h1>
-      <Display counter={good} text={"good "} />
-      <Display counter={neutral} text={"neutral "} />
-      <Display counter={bad} text={"bad "} />
-      <Display counter={bad + good + neutral} text={"all "} />
-      <Display counter={((good - bad)/(bad + good + neutral))} text={"average "} />
-      <Display counter={((good)/(bad + good + neutral))} text={"positive "} />
+      <Statistics counter={good} text={"good "} />
+      <Statistics counter={neutral} text={"neutral "} />
+      <Statistics counter={bad} text={"bad "} />
+      <Statistics counter={bad + good + neutral} text={"all "} />
+      <Statistics counter={((good - bad) / (bad + good + neutral))} text={"average "} />
+      <Statistics counter={((good) / (bad + good + neutral))} text={"positive "} />
     </div>
   )
 }
