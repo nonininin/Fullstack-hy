@@ -26,6 +26,10 @@ const App = () => {
     setPoints(pointsCopy);
   };
 
+
+
+  const bestAnecdoteIndex = points.indexOf(Math.max(...points));
+
   return (
     <div>
       <h1>Anecdote of the day</h1>
@@ -38,6 +42,9 @@ const App = () => {
         }
         text="next anecdote"
       />
+      <h1>Anecdote with most votes</h1>
+      <div>{anecdotes[bestAnecdoteIndex]}</div>
+      <div>has {points[bestAnecdoteIndex]} votes</div>
     </div>
   );
 };
